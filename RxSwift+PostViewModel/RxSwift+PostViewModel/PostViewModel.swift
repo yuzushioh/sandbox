@@ -6,4 +6,36 @@
 //  Copyright © 2016 yuzushioh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import RxSwift
+
+class PostViewModel {
+    
+    let loading = BehaviorSubject(value: false)
+    let error = PublishSubject<ErrorType>()
+    
+    let title = PublishSubject<String>()
+    let description = PublishSubject<String>()
+    let category = PublishSubject<String>()
+    let price = PublishSubject<Int>()
+    let photo = PublishSubject<UIImage>()
+    
+    private var request: Observable<Void> {
+        return Observable
+            .combineLatest(title, photo, description, category, price) { title, photo, description, category, price in
+                return ()
+            }
+    }
+    
+    init() {
+        bindPostRequest()
+    }
+    
+    private let disposeBag = DisposeBag()
+    
+    let postTrigger = PublishSubject<Void>()
+    
+    private func bindPostRequest() {
+        
+    }
+}
