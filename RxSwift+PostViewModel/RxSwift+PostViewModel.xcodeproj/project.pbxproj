@@ -140,11 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				2A8D8AA91D56EFF900160016 /* AppDelegate.swift */,
-				2A8D8AAB1D56EFF900160016 /* PostViewController.swift */,
-				2A8D8AE91D57718500160016 /* PostViewModel.swift */,
-				2A8D8AEB1D57737000160016 /* Post.swift */,
-				2A8D8AED1D5773E600160016 /* PostService.swift */,
-				2A8D8AEF1D57747D00160016 /* Session+Rx.swift */,
+				2A8D8AF31D57EC5900160016 /* Post */,
+				2A8D8AF21D57EC5200160016 /* Model */,
+				2A8D8AF11D57EC4900160016 /* API */,
 				2A8D8AAD1D56EFF900160016 /* Main.storyboard */,
 				2A8D8AB01D56EFF900160016 /* Assets.xcassets */,
 				2A8D8AB21D56EFF900160016 /* LaunchScreen.storyboard */,
@@ -180,6 +178,32 @@
 				2A8D8ADA1D56F3B500160016 /* RxSwift.framework */,
 			);
 			name = Carthage;
+			sourceTree = "<group>";
+		};
+		2A8D8AF11D57EC4900160016 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2A8D8AED1D5773E600160016 /* PostService.swift */,
+				2A8D8AEF1D57747D00160016 /* Session+Rx.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		2A8D8AF21D57EC5200160016 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A8D8AEB1D57737000160016 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2A8D8AF31D57EC5900160016 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				2A8D8AAB1D56EFF900160016 /* PostViewController.swift */,
+				2A8D8AE91D57718500160016 /* PostViewModel.swift */,
+			);
+			name = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
