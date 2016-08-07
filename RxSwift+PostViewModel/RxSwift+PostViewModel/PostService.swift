@@ -13,6 +13,12 @@ class PostService {
     struct Post: RequestType {
         typealias Response = Post
         
+        let title: String
+        let description: String
+        let category: String
+        let price: Int
+        var mediaId: String
+        
         var baseURL: NSURL {
             return NSURL(string: "")!
         }
