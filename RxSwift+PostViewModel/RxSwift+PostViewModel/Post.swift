@@ -6,4 +6,12 @@
 //  Copyright © 2016 yuzushioh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Post {
+    let title: String
+    let description: String
+    let category: String
+    let price: Int
+    let photo: UIImage
+}
