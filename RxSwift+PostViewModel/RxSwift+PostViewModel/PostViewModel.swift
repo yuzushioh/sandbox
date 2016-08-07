@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import APIKit
 
 class PostViewModel {
     
@@ -20,10 +21,16 @@ class PostViewModel {
     let price = PublishSubject<Int>()
     let photo = PublishSubject<UIImage>()
     
-    private var request: Observable<Void> {
+    private var postRequest: Observable<PostService.Post> {
         return Observable
-            .combineLatest(title, photo, description, category, price) { title, photo, description, category, price in
-                return ()
+            .combineLatest(title, description, category, price) { title, description, category, price in
+                return PostService.Post(
+                    title: title,
+                    description: description,
+                    category: category,
+                    price: price,
+                    mediaId: ""
+                )
             }
     }
     
@@ -36,6 +43,8 @@ class PostViewModel {
     let postTrigger = PublishSubject<Void>()
     
     private func bindPostRequest() {
-        
+        let request = postTrigger
+            .withLatestFrom(postRequest)
+            .shareReplay(1)
     }
 }
