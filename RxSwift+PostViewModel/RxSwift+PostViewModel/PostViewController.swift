@@ -9,10 +9,23 @@
 import UIKit
 
 class PostViewController: UIViewController {
+    
+    let viewModel = PostViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    private func bindViewState() {
+        
+    }
+    
+    private func bindUI() {
+        
+    }
+    
+    private func bindUIInput() {
         
     }
 }
