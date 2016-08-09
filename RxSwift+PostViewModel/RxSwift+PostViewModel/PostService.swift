@@ -10,7 +10,7 @@ import UIKit
 import APIKit
 
 class PostService {
-    struct Post: RequestType {
+    struct PostRequest: RequestType {
         typealias Response = Post
         
         let title: String
@@ -31,8 +31,8 @@ class PostService {
             return .GET
         }
         
-        func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Post.Response {
-            guard let response = object as? Post.Response else {
+        func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> PostRequest.Response {
+            guard let response = object as? PostRequest.Response else {
                 throw ResponseError.UnexpectedObject(object)
             }
             

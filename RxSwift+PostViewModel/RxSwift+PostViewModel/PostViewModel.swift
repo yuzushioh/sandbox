@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import APIKit
 
 class PostViewModel {
@@ -21,10 +22,10 @@ class PostViewModel {
     let price = PublishSubject<Int>()
     let photo = PublishSubject<UIImage>()
     
-    private var postRequest: Observable<PostService.Post> {
+    private var postRequest: Observable<PostService.PostRequest> {
         return Observable
             .combineLatest(title, description, category, price) { title, description, category, price in
-                return PostService.Post(
+                return PostService.PostRequest(
                     title: title,
                     description: description,
                     category: category,
@@ -41,10 +42,34 @@ class PostViewModel {
     private let disposeBag = DisposeBag()
     
     let postTrigger = PublishSubject<Void>()
+    let completedTrigger = PublishSubject<Post>()
     
     private func bindPostRequest() {
         let request = postTrigger
             .withLatestFrom(postRequest)
             .shareReplay(1)
+        
+        let response = request
+            .flatMap { request in
+                return Session.sharedSession.rx_responseFrom(request)
+                    .doOnError { [weak self] error in
+                        self?.error.onNext(error)
+                    }
+                    .catchError { _ in Observable.empty() }
+            }
+            .shareReplay(1)
+        
+        Observable
+            .of(
+                request.map { _ in true },
+                response.map { _ in false }
+            )
+            .merge()
+            .bindTo(loading)
+            .addDisposableTo(disposeBag)
+        
+        response
+            .bindTo(completedTrigger)
+            .addDisposableTo(disposeBag)
     }
 }

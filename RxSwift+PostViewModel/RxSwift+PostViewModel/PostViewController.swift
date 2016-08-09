@@ -15,6 +15,9 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindViewState()
+        bindUI()
+        bindUIInput()
     }
     
     private func bindViewState() {
