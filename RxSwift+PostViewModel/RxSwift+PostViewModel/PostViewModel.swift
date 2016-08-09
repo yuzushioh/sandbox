@@ -18,7 +18,7 @@ class PostViewModel {
     
     let title = PublishSubject<String>()
     let description = PublishSubject<String>()
-    let category = PublishSubject<String>()
+    let category = PublishSubject<Int>()
     let price = PublishSubject<Int>()
     let photo = PublishSubject<UIImage>()
     

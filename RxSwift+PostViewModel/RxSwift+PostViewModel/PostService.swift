@@ -15,7 +15,7 @@ class PostService {
         
         let title: String
         let description: String
-        let category: String
+        let category: Int
         let price: Int
         var mediaId: String
         

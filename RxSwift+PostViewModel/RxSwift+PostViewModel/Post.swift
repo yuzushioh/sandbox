@@ -11,7 +11,7 @@ import UIKit
 struct Post {
     let title: String
     let description: String
-    let category: String
+    let category: Int
     let price: Int
     let photo: UIImage
 }
