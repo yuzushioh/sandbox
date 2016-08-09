@@ -179,6 +179,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="categoryLabel" destination="Cyp-51-HuH" id="Fmf-ho-kub"/>
+                        <outlet property="descriptionPlaceholder" destination="Zm5-65-RzG" id="Vd9-NX-EJU"/>
                         <outlet property="descriptionTextView" destination="igY-b4-wzI" id="b25-7V-Mgs"/>
                         <outlet property="priceTextField" destination="TdB-3l-ZNv" id="eeU-6F-nDi"/>
                         <outlet property="titleTextField" destination="C8v-Rw-77c" id="E2T-U3-AC1"/>

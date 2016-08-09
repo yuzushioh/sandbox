@@ -22,6 +22,10 @@ class PostViewModel {
     let price = PublishSubject<Int>()
     let photo = PublishSubject<UIImage>()
     
+    var textViewPlaceholderHidden: Observable<Bool> {
+        return description.map { !$0.isEmpty }
+    }
+    
     private var postRequest: Observable<PostService.PostRequest> {
         return Observable
             .combineLatest(title, description, category, price) { title, description, category, price in
