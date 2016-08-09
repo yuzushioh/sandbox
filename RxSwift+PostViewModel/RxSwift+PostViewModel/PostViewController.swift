@@ -27,7 +27,7 @@ class PostViewController: UITableViewController {
         super.viewDidLoad()
         
         bindViewState()
-        bindUIInput()
+        bindUI()
     }
     
     private func bindViewState() {
@@ -54,7 +54,7 @@ class PostViewController: UITableViewController {
             .addDisposableTo(disposeBag)
     }
     
-    private func bindUIInput() {
+    private func bindUI() {
         titleTextField.rx_text
             .bindTo(viewModel.title)
             .addDisposableTo(disposeBag)
@@ -77,6 +77,43 @@ class PostViewController: UITableViewController {
         postButton.rx_tap
             .bindTo(viewModel.postTrigger)
             .addDisposableTo(disposeBag)
+        
+        selectImageButton.rx_tap
+            .subscribeNext { [weak self] _ in
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .PhotoLibrary
+                self?.presentViewController(imagePicker, animated: true, completion: nil)
+            }
+            .addDisposableTo(disposeBag)
+        
+        viewModel.image
+            .subscribeNext { [weak self] image in
+                self?.selectedImageView.image = image
+            }
+            .addDisposableTo(disposeBag)
+    }
+}
+
+extension PostViewController {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 3 && indexPath.row == 0 {
+            
+        }
+    }
+}
+
+extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        guard info[UIImagePickerControllerOriginalImage] != nil else {
+            return
+        }
+        
+        let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
+        viewModel.image.onNext(photo)
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

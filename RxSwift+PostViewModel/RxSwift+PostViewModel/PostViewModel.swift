@@ -20,7 +20,7 @@ class PostViewModel {
     let description = PublishSubject<String>()
     let category = PublishSubject<Int>()
     let price = PublishSubject<Int>()
-    let photo = PublishSubject<UIImage>()
+    let image = PublishSubject<UIImage>()
     
     var textViewPlaceholderHidden: Observable<Bool> {
         return description.map { !$0.isEmpty }
@@ -28,7 +28,7 @@ class PostViewModel {
     
     var postButtonEnabled: Observable<Bool> {
         return Observable
-            .combineLatest(title, description, category, price, photo) { title, description, category, price, photo -> Bool in
+            .combineLatest(title, description, category, price, image) { title, description, category, price, image -> Bool in
                 return !title.isEmpty && !description.isEmpty && price != 0
             }
             .startWith(false)
