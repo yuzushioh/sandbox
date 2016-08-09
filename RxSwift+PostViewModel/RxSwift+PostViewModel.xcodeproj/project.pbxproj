@@ -27,6 +27,8 @@
 		2A8D8AEE1D5773E600160016 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AED1D5773E600160016 /* PostService.swift */; };
 		2A8D8AF01D57747D00160016 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AEF1D57747D00160016 /* Session+Rx.swift */; };
 		2A8D8AF51D5A1D5600160016 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AF41D5A1D5600160016 /* String+Ex.swift */; };
+		2A8D8AF71D5A2A8F00160016 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AF61D5A2A8F00160016 /* CategoryListViewController.swift */; };
+		2A8D8AF91D5A2AAD00160016 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AF81D5A2AAD00160016 /* CategoryListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		2A8D8AED1D5773E600160016 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		2A8D8AEF1D57747D00160016 /* Session+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+Rx.swift"; sourceTree = "<group>"; };
 		2A8D8AF41D5A1D5600160016 /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		2A8D8AF61D5A2A8F00160016 /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		2A8D8AF81D5A2AAD00160016 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,8 @@
 			children = (
 				2A8D8AAB1D56EFF900160016 /* PostViewController.swift */,
 				2A8D8AE91D57718500160016 /* PostViewModel.swift */,
+				2A8D8AF61D5A2A8F00160016 /* CategoryListViewController.swift */,
+				2A8D8AF81D5A2AAD00160016 /* CategoryListViewModel.swift */,
 			);
 			name = Post;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A8D8AF71D5A2A8F00160016 /* CategoryListViewController.swift in Sources */,
 				2A8D8AF01D57747D00160016 /* Session+Rx.swift in Sources */,
 				2A8D8AEE1D5773E600160016 /* PostService.swift in Sources */,
 				2A8D8AF51D5A1D5600160016 /* String+Ex.swift in Sources */,
@@ -348,6 +355,7 @@
 				2A8D8AAC1D56EFF900160016 /* PostViewController.swift in Sources */,
 				2A8D8AAA1D56EFF900160016 /* AppDelegate.swift in Sources */,
 				2A8D8AEC1D57737000160016 /* Post.swift in Sources */,
+				2A8D8AF91D5A2AAD00160016 /* CategoryListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
