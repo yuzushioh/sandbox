@@ -11,6 +11,8 @@ import RxSwift
 
 class PostViewController: UITableViewController {
     
+    @IBOutlet weak var selectedImageView: UIImageView!
+    @IBOutlet weak var selectImageButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionPlaceholder: UILabel!

@@ -64,6 +64,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w8j-Ci-IYo" id="MvF-3L-uyY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-JV-pWO">
+                                                    <rect key="frame" x="137" y="10" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="OnM-X9-g3K"/>
+                                                        <constraint firstAttribute="width" constant="100" id="PRG-uP-PcT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-4p-QfW">
+                                                    <rect key="frame" x="137" y="10" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="23K-ov-Nxq"/>
+                                                        <constraint firstAttribute="width" constant="100" id="q84-4V-1VA"/>
+                                                    </constraints>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wNm-JV-pWO" firstAttribute="centerX" secondItem="MvF-3L-uyY" secondAttribute="centerX" id="Esy-ew-e7Q"/>
+                                                <constraint firstItem="ZFt-4p-QfW" firstAttribute="centerY" secondItem="MvF-3L-uyY" secondAttribute="centerY" id="Te7-fD-Kei"/>
+                                                <constraint firstItem="wNm-JV-pWO" firstAttribute="centerY" secondItem="MvF-3L-uyY" secondAttribute="centerY" id="ewW-HB-5Wm"/>
+                                                <constraint firstItem="ZFt-4p-QfW" firstAttribute="centerX" secondItem="MvF-3L-uyY" secondAttribute="centerX" id="mfW-QW-SPd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -207,6 +229,8 @@
                         <outlet property="descriptionTextView" destination="igY-b4-wzI" id="b25-7V-Mgs"/>
                         <outlet property="postButton" destination="lmt-El-RcK" id="gKK-7L-XA9"/>
                         <outlet property="priceTextField" destination="TdB-3l-ZNv" id="eeU-6F-nDi"/>
+                        <outlet property="selectImageButton" destination="ZFt-4p-QfW" id="pXB-ED-2L6"/>
+                        <outlet property="selectedImageView" destination="wNm-JV-pWO" id="OZc-WM-gme"/>
                         <outlet property="titleTextField" destination="C8v-Rw-77c" id="E2T-U3-AC1"/>
                     </connections>
                 </tableViewController>
@@ -215,4 +239,7 @@
             <point key="canvasLocation" x="1197.5" y="651"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="618" height="337"/>
+    </resources>
 </document>
