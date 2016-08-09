@@ -16,6 +16,7 @@ class PostViewController: UITableViewController {
     @IBOutlet weak var descriptionPlaceholder: UILabel!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var postButton: UIButton!
     
     private let viewModel = PostViewModel()
     private let disposeBag = DisposeBag()
@@ -35,7 +36,6 @@ class PostViewController: UITableViewController {
         viewModel.loading
             .subscribeNext { loading in
                 print(loading)
-                
                 // ここでこのloadingをindicatorViewなどのrx_animatingなどにbindする。
             }
             .addDisposableTo(disposeBag)
@@ -59,6 +59,10 @@ class PostViewController: UITableViewController {
                 }
             }
             .bindTo(viewModel.price)
+            .addDisposableTo(disposeBag)
+        
+        postButton.rx_tap
+            .bindTo(viewModel.postTrigger)
             .addDisposableTo(disposeBag)
     }
 }
