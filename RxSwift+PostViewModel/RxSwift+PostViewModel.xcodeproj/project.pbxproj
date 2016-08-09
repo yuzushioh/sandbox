@@ -26,6 +26,7 @@
 		2A8D8AEC1D57737000160016 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AEB1D57737000160016 /* Post.swift */; };
 		2A8D8AEE1D5773E600160016 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AED1D5773E600160016 /* PostService.swift */; };
 		2A8D8AF01D57747D00160016 /* Session+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AEF1D57747D00160016 /* Session+Rx.swift */; };
+		2A8D8AF51D5A1D5600160016 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AF41D5A1D5600160016 /* String+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		2A8D8AEB1D57737000160016 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2A8D8AED1D5773E600160016 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		2A8D8AEF1D57747D00160016 /* Session+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+Rx.swift"; sourceTree = "<group>"; };
+		2A8D8AF41D5A1D5600160016 /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				2A8D8AA91D56EFF900160016 /* AppDelegate.swift */,
+				2A8D8AF41D5A1D5600160016 /* String+Ex.swift */,
 				2A8D8AF31D57EC5900160016 /* Post */,
 				2A8D8AF21D57EC5200160016 /* Model */,
 				2A8D8AF11D57EC4900160016 /* API */,
@@ -340,6 +343,7 @@
 			files = (
 				2A8D8AF01D57747D00160016 /* Session+Rx.swift in Sources */,
 				2A8D8AEE1D5773E600160016 /* PostService.swift in Sources */,
+				2A8D8AF51D5A1D5600160016 /* String+Ex.swift in Sources */,
 				2A8D8AEA1D57718500160016 /* PostViewModel.swift in Sources */,
 				2A8D8AAC1D56EFF900160016 /* PostViewController.swift in Sources */,
 				2A8D8AAA1D56EFF900160016 /* AppDelegate.swift in Sources */,
