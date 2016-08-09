@@ -96,11 +96,20 @@ class PostViewController: UITableViewController {
     }
 }
 
-extension PostViewController {
+extension PostViewController: CategoryListViewControllerDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 3 && indexPath.row == 0 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("CategoryListViewController") as! CategoryListViewController
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func categoryListViewController(viewController: UIViewController?, selectedCategoryId: Int) {
+        
+        viewModel.category.onNext(selectedCategoryId)
+        viewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
