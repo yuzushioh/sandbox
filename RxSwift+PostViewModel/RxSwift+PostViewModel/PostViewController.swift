@@ -9,7 +9,12 @@
 import UIKit
 import RxSwift
 
-class PostViewController: UIViewController {
+class PostViewController: UITableViewController {
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     private let viewModel = PostViewModel()
     private let disposeBag = DisposeBag()
