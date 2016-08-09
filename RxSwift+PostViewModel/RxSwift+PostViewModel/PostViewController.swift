@@ -33,6 +33,17 @@ class PostViewController: UITableViewController {
             .bindTo(descriptionPlaceholder.rx_hidden)
             .addDisposableTo(disposeBag)
         
+        viewModel.postButtonEnabled
+            .map { $0 ? UIColor(red: 0/255, green: 189/255, blue: 156/255, alpha: 1) : UIColor.lightGrayColor() }
+            .subscribeNext { [weak self] color in
+                self?.postButton.backgroundColor = color
+            }
+            .addDisposableTo(disposeBag)
+        
+        viewModel.postButtonEnabled
+            .bindTo(postButton.rx_enabled)
+            .addDisposableTo(disposeBag)
+        
         viewModel.loading
             .subscribeNext { loading in
                 print(loading)

@@ -26,6 +26,14 @@ class PostViewModel {
         return description.map { !$0.isEmpty }
     }
     
+    var postButtonEnabled: Observable<Bool> {
+        return Observable
+            .combineLatest(title, description, category, price, photo) { title, description, category, price, photo -> Bool in
+                return !title.isEmpty && !description.isEmpty && price != 0
+            }
+            .startWith(false)
+    }
+    
     private var postRequest: Observable<PostService.PostRequest> {
         return Observable
             .combineLatest(title, description, category, price) { title, description, category, price in
