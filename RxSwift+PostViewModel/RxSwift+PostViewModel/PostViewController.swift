@@ -53,7 +53,7 @@ class PostViewController: UITableViewController {
             }
             .addDisposableTo(disposeBag)
         
-        viewModel.completedTrigger
+        viewModel.requestCompleted
             .subscribeNext { post in
                 print(post)
             }

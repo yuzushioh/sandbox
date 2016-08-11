@@ -13,7 +13,6 @@ import APIKit
 
 class PostViewModel {
     
-    let loading = BehaviorSubject(value: false)
     let error = PublishSubject<ErrorType>()
     
     let title = PublishSubject<String>()
@@ -21,6 +20,10 @@ class PostViewModel {
     let category = PublishSubject<Category>()
     let price = PublishSubject<Int>()
     let image = PublishSubject<UIImage>()
+    
+    var loading: Observable<Bool> {
+        return isLoading.asObservable()
+    }
     
     var textViewPlaceholderHidden: Observable<Bool> {
         return description.map { !$0.isEmpty }
@@ -52,9 +55,10 @@ class PostViewModel {
     }
     
     private let disposeBag = DisposeBag()
+    private let isLoading: Variable<Bool> = Variable(false)
     
     let postTrigger = PublishSubject<Void>()
-    let completedTrigger = PublishSubject<Post>()
+    let requestCompleted = PublishSubject<Post>()
     
     private func bindPostRequest() {
         let mediaId = postTrigger
@@ -90,11 +94,11 @@ class PostViewModel {
                 response.map { _ in false }
             )
             .merge()
-            .bindTo(loading)
+            .bindTo(isLoading)
             .addDisposableTo(disposeBag)
         
         response
-            .bindTo(completedTrigger)
+            .bindTo(requestCompleted)
             .addDisposableTo(disposeBag)
     }
 }
