@@ -52,6 +52,12 @@ class PostViewController: UITableViewController {
                 // ここでこのloadingをindicatorViewなどのrx_animatingなどにbindする。
             }
             .addDisposableTo(disposeBag)
+        
+        viewModel.completedTrigger
+            .subscribeNext { post in
+                print(post)
+            }
+            .addDisposableTo(disposeBag)
     }
     
     private func bindUI() {

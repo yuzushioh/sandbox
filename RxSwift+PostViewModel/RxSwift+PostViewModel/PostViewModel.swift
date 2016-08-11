@@ -61,7 +61,7 @@ class PostViewModel {
             .withLatestFrom(image)
             .flatMap { image in
                 // ここで画像をAPIに送り、idを受け取る
-                return Observable.just("")
+                return Observable.just("media id comes here")
             }
         
         let request = mediaId

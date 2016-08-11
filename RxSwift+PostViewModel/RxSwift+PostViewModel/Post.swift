@@ -13,5 +13,5 @@ struct Post {
     let description: String
     let category: Int
     let price: Int
-    let photo: UIImage
+    let image: String
 }
