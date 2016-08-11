@@ -57,8 +57,21 @@ class PostViewModel {
     let completedTrigger = PublishSubject<Post>()
     
     private func bindPostRequest() {
-        let request = postTrigger
-            .withLatestFrom(postRequest)
+        let mediaId = postTrigger
+            .withLatestFrom(image)
+            .flatMap { image in
+                // ここで画像をAPIに送り、idを受け取る
+                return Observable.just("")
+            }
+        
+        let request = mediaId
+            .withLatestFrom(postRequest) { $0 }
+            .map { id, request -> PostService.PostRequest in
+                var request = request
+                request.mediaId = id
+                
+                return request
+            }
             .shareReplay(1)
         
         let response = request
