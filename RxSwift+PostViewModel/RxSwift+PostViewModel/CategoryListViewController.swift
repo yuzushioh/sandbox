@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol CategoryListViewControllerDelegate {
-    func categoryListViewController(viewController: UIViewController?, selectedCategoryId: Int)
+    func categoryListViewController(viewController: UIViewController?, selectedCategory: Category)
 }
 
 class CategoryListViewController: UITableViewController {
@@ -19,6 +19,7 @@ class CategoryListViewController: UITableViewController {
     var delegate: CategoryListViewControllerDelegate!
     
     private let viewModel = CategoryListViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,16 @@ class CategoryListViewController: UITableViewController {
     }
     
     private func bindTableView() {
+        viewModel.categories.asObservable()
+            .bindTo(tableView.rx_itemsWithCellIdentifier("Cell")) { index, category, cell in
+                cell.textLabel?.text = category.name
+            }
+            .addDisposableTo(disposeBag)
         
+        tableView.rx_modelSelected(Category)
+            .subscribeNext { [weak self] category in
+                self?.delegate.categoryListViewController(self, selectedCategory: category)
+            }
+            .addDisposableTo(disposeBag)
     }
 }

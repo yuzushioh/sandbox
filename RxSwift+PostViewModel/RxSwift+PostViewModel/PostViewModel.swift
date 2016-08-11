@@ -18,7 +18,7 @@ class PostViewModel {
     
     let title = PublishSubject<String>()
     let description = PublishSubject<String>()
-    let category = PublishSubject<Int>()
+    let category = PublishSubject<Category>()
     let price = PublishSubject<Int>()
     let image = PublishSubject<UIImage>()
     
@@ -40,7 +40,7 @@ class PostViewModel {
                 return PostService.PostRequest(
                     title: title,
                     description: description,
-                    category: category,
+                    category: category.id,
                     price: price,
                     mediaId: ""
                 )

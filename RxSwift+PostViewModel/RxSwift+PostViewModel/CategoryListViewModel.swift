@@ -11,7 +11,9 @@ import RxSwift
 
 class CategoryListViewModel {
     
+    let categories: Variable<[Category]>!
+    
     init() {
-        
+        categories = Variable(Category.categories)
     }
 }
