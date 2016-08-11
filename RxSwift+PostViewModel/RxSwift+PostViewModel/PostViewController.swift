@@ -74,6 +74,13 @@ class PostViewController: UITableViewController {
             .bindTo(viewModel.price)
             .addDisposableTo(disposeBag)
         
+        viewModel.price
+            .map { price in
+                return price == 0 ? "" : "¥\(price)"
+            }
+            .bindTo(priceTextField.rx_text)
+            .addDisposableTo(disposeBag)
+        
         postButton.rx_tap
             .bindTo(viewModel.postTrigger)
             .addDisposableTo(disposeBag)
@@ -93,6 +100,11 @@ class PostViewController: UITableViewController {
                 self?.selectedImageView.image = image
             }
             .addDisposableTo(disposeBag)
+        
+        viewModel.category
+            .map { $0.name }
+            .bindTo(categoryLabel.rx_text)
+            .addDisposableTo(disposeBag)
     }
 }
 
@@ -106,10 +118,10 @@ extension PostViewController: CategoryListViewControllerDelegate {
         }
     }
     
-    func categoryListViewController(viewController: UIViewController?, selectedCategoryId: Int) {
+    func categoryListViewController(viewController: UIViewController?, selectedCategory: Category) {
         
-        viewModel.category.onNext(selectedCategoryId)
-        viewController?.dismissViewControllerAnimated(true, completion: nil)
+        viewModel.category.onNext(selectedCategory)
+        navigationController?.popViewControllerAnimated(true)
     }
 }
 
