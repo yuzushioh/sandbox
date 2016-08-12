@@ -21,5 +21,13 @@ extension Category {
             Category(id: 3, name: "自転車・自動車")
         ]
     }
+    
+    static func findCategoryWithId(id: Int) -> Category {
+        return Category.categories
+            .filter { category in
+                return category.id == id
+            }
+            .first!
+    }
 }
 

@@ -58,6 +58,12 @@ class PostViewController: UITableViewController {
                 print(post)
             }
             .addDisposableTo(disposeBag)
+        
+        viewModel.error
+            .subscribeNext { error in
+                print(error)
+            }
+            .addDisposableTo(disposeBag)
     }
     
     private func bindUI() {
@@ -80,11 +86,30 @@ class PostViewController: UITableViewController {
             .bindTo(viewModel.price)
             .addDisposableTo(disposeBag)
         
+        viewModel.title
+            .bindTo(titleTextField.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.description
+            .bindTo(descriptionTextView.rx_text)
+            .addDisposableTo(disposeBag)
+        
         viewModel.price
             .map { price in
                 return price == 0 ? "" : "¥\(price)"
             }
             .bindTo(priceTextField.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.image
+            .subscribeNext { [weak self] image in
+                self?.selectedImageView.image = image
+            }
+            .addDisposableTo(disposeBag)
+        
+        viewModel.category
+            .map { $0.name }
+            .bindTo(categoryLabel.rx_text)
             .addDisposableTo(disposeBag)
         
         postButton.rx_tap
@@ -99,17 +124,6 @@ class PostViewController: UITableViewController {
                 imagePicker.sourceType = .PhotoLibrary
                 self?.presentViewController(imagePicker, animated: true, completion: nil)
             }
-            .addDisposableTo(disposeBag)
-        
-        viewModel.image
-            .subscribeNext { [weak self] image in
-                self?.selectedImageView.image = image
-            }
-            .addDisposableTo(disposeBag)
-        
-        viewModel.category
-            .map { $0.name }
-            .bindTo(categoryLabel.rx_text)
             .addDisposableTo(disposeBag)
     }
 }

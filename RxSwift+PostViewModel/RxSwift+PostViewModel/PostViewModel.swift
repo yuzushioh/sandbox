@@ -13,6 +13,20 @@ import APIKit
 
 class PostViewModel {
     
+    init(post: Post? = nil) {
+        setDefaultValueFromPost(post)
+        bindPostRequest()
+    }
+    
+    private func setDefaultValueFromPost(post: Post?) {
+        guard let post = post else { return }
+        
+        title.onNext(post.title)
+        description.onNext(post.description)
+        category.onNext(Category.findCategoryWithId(post.category))
+        price.onNext(post.price)
+    }
+    
     let error = PublishSubject<ErrorType>()
     
     let title = PublishSubject<String>()
@@ -48,10 +62,6 @@ class PostViewModel {
                     mediaId: ""
                 )
             }
-    }
-    
-    init() {
-        bindPostRequest()
     }
     
     private let disposeBag = DisposeBag()
