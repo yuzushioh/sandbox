@@ -50,8 +50,32 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="Ymz-ep-UYA"/>
+                    <connections>
+                        <outlet property="titleToastView" destination="b9A-Dw-g7a" id="UTr-Ho-N7e"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFm-MO-BeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" id="b9A-Dw-g7a" customClass="ToastView" customModule="iOSDCRejetcedConference" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f53-PB-cbs">
+                            <rect key="frame" x="49" y="8" width="52" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="13" id="R3h-nv-gTe"/>
+                                <constraint firstAttribute="width" constant="52" id="rpE-Ny-Vdb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="f53-PB-cbs" firstAttribute="centerX" secondItem="b9A-Dw-g7a" secondAttribute="centerX" id="3lT-oz-ZkV"/>
+                        <constraint firstItem="f53-PB-cbs" firstAttribute="centerY" secondItem="b9A-Dw-g7a" secondAttribute="centerY" id="P81-6l-TLk"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="908.5" y="469.5"/>
         </scene>
