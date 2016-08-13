@@ -67,6 +67,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6An-yG-e2k">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBf-W2-F9j" customClass="PhotoBrowserScrollView" customModule="iOSDCRejetcedConference" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -86,18 +90,23 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6An-yG-e2k" firstAttribute="top" secondItem="bfM-yG-tTN" secondAttribute="top" id="BMt-PU-n0Z"/>
+                            <constraint firstItem="6Zj-ON-hy2" firstAttribute="top" secondItem="6An-yG-e2k" secondAttribute="bottom" id="Tg6-JK-FdW"/>
                             <constraint firstItem="hBf-W2-F9j" firstAttribute="top" secondItem="bfM-yG-tTN" secondAttribute="top" id="ToG-SP-54A"/>
                             <constraint firstItem="6Zj-ON-hy2" firstAttribute="top" secondItem="hBf-W2-F9j" secondAttribute="bottom" id="YAV-1v-YEQ"/>
                             <constraint firstItem="hBf-W2-F9j" firstAttribute="leading" secondItem="bfM-yG-tTN" secondAttribute="leading" id="YZt-yW-Jpq"/>
                             <constraint firstAttribute="trailing" secondItem="hBf-W2-F9j" secondAttribute="trailing" id="ZFa-Dc-xh9"/>
+                            <constraint firstItem="6An-yG-e2k" firstAttribute="leading" secondItem="bfM-yG-tTN" secondAttribute="leading" id="adJ-D2-ux8"/>
                             <constraint firstItem="XbU-oa-fux" firstAttribute="leading" secondItem="bfM-yG-tTN" secondAttribute="leading" constant="8" id="eBM-MZ-nW1"/>
+                            <constraint firstAttribute="trailing" secondItem="6An-yG-e2k" secondAttribute="trailing" id="f9g-gb-RGY"/>
                             <constraint firstItem="XbU-oa-fux" firstAttribute="top" secondItem="bfM-yG-tTN" secondAttribute="top" constant="8" id="gjp-R4-5SA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="backgroundView" destination="6An-yG-e2k" id="SdK-3K-51q"/>
                         <outlet property="closeButton" destination="XbU-oa-fux" id="4W3-qL-dpT"/>
                         <outlet property="scrollView" destination="hBf-W2-F9j" id="mKT-aF-w1W"/>
                     </connections>
