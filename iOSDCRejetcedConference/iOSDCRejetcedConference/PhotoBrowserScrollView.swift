@@ -12,9 +12,11 @@ class PhotoBrowserScrollView: UIScrollView {
     
     var photo: Photo! {
         didSet {
-            
+            imageView.image = UIImage(named: photo.photoName)
         }
     }
+    
+    private var imageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,6 +29,13 @@ class PhotoBrowserScrollView: UIScrollView {
     }
     
     private func initialize() {
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+        imageView.contentMode = .ScaleAspectFit
+        imageView.backgroundColor = UIColor.clearColor()
+        imageView.userInteractionEnabled = true
+        addSubview(imageView)
         
+        contentSize = imageView.frame.size
+        decelerationRate = UIScrollViewDecelerationRateFast
     }
 }

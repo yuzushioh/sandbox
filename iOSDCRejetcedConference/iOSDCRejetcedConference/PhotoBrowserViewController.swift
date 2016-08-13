@@ -14,8 +14,26 @@ class PhotoBrowserViewController: UIViewController {
     
     var photo: Photo!
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        initialize()
+    }
+    
+    private func initialize() {
+        modalPresentationStyle = .OverFullScreen
+        modalTransitionStyle = .CrossDissolve
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.photo = photo
     }
 }
