@@ -18,8 +18,9 @@ class PhotoBrowserViewController: UIViewController {
     var fromView: UIView!
     
     private var panGestureRecognizer: UIPanGestureRecognizer!
-    
     private var currentScrollViewPoint: CGPoint = CGPointZero
+    
+    // MARK: - Computed property
     
     private var halfScreenHeight: CGFloat {
         return view.frame.height/2
@@ -64,6 +65,39 @@ class PhotoBrowserViewController: UIViewController {
         
         setupPanGestureRecognizer()
     }
+    
+    private func setElementHidden(hidden: Bool, animated: Bool) {
+        UIView.animateWithDuration(
+            animated ? 0.3 : 0.0,
+            animations: {
+                self.closeButton.alpha = hidden ? 0 : 1
+                self.fromView.alpha = hidden ? 0 : 1
+            }
+        )
+    }
+    
+    private func dismissPhotoBrowser() {
+        scrollView.removeFromSuperview()
+        
+        animate(
+            animation: {
+                self.backgroundView.alpha = 0
+            },
+            completion: { completed in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        )
+    }
+    
+    private func centerPhotoBrowser() {
+        animate(
+            animation: {
+                self.scrollView.center = self.view.center
+            }
+        )
+    }
+    
+    // MARK: - GestureRecognizer Methods
     
     private func setupPanGestureRecognizer() {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pangestureDidRecognized(_:)))
@@ -114,37 +148,6 @@ class PhotoBrowserViewController: UIViewController {
         default:
             break
         }
-    }
-    
-    private func setElementHidden(hidden: Bool, animated: Bool) {
-        UIView.animateWithDuration(
-            animated ? 0.3 : 0.0,
-            animations: {
-                self.closeButton.alpha = hidden ? 0 : 1
-                self.fromView.alpha = hidden ? 0 : 1
-            }
-        )
-    }
-    
-    private func dismissPhotoBrowser() {
-        scrollView.removeFromSuperview()
-        
-        animate(
-            animation: {
-                self.backgroundView.alpha = 0
-            },
-            completion: { completed in
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        )
-    }
-    
-    private func centerPhotoBrowser() {
-        animate(
-            animation: {
-                self.scrollView.center = self.view.center
-            }
-        )
     }
     
     private func animate(animation animation: Void -> Void, completion: ((Bool) -> Void)? = nil) {

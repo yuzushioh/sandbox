@@ -51,6 +51,8 @@ class PhotoListViewController: UICollectionViewController, UICollectionViewDeleg
         presentViewController(vc, animated: true, completion: nil)
     }
     
+    // MARK: UICollectionViewDelegateFlowLayout
+    
     private let numberOfRows: Int = 3
     private let minimumLineSpacing: CGFloat = 1
     private let minimumInteritemSpacing: CGFloat = 1
