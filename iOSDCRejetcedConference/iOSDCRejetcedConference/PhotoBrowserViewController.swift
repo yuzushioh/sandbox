@@ -11,8 +11,10 @@ import UIKit
 class PhotoBrowserViewController: UIViewController {
     
     @IBOutlet weak var scrollView: PhotoBrowserScrollView!
+    @IBOutlet weak var closeButton: UIButton!
     
     var photo: Photo!
+    var fromView: UIView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,5 +37,9 @@ class PhotoBrowserViewController: UIViewController {
         super.viewDidLoad()
         
         scrollView.photo = photo
+    }
+    
+    @IBAction func closeButtonTapped(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

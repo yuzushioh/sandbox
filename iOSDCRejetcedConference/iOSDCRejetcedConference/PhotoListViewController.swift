@@ -44,8 +44,10 @@ class PhotoListViewController: UICollectionViewController, UICollectionViewDeleg
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("PhotoBrowserViewController") as! PhotoBrowserViewController
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! PhotoViewCell
         
         vc.photo = photos[indexPath.row]
+        vc.fromView = cell
         presentViewController(vc, animated: true, completion: nil)
     }
     

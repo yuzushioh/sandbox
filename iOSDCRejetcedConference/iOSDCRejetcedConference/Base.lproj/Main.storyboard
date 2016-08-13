@@ -71,6 +71,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-oa-fux">
+                                <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Dl3-JR-ElM"/>
+                                    <constraint firstAttribute="width" constant="40" id="klT-XK-q8z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="fZS-3d-pOD" eventType="touchUpInside" id="YTd-lY-gSo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -78,10 +92,13 @@
                             <constraint firstItem="6Zj-ON-hy2" firstAttribute="top" secondItem="hBf-W2-F9j" secondAttribute="bottom" id="YAV-1v-YEQ"/>
                             <constraint firstItem="hBf-W2-F9j" firstAttribute="leading" secondItem="bfM-yG-tTN" secondAttribute="leading" id="YZt-yW-Jpq"/>
                             <constraint firstAttribute="trailing" secondItem="hBf-W2-F9j" secondAttribute="trailing" id="ZFa-Dc-xh9"/>
+                            <constraint firstItem="XbU-oa-fux" firstAttribute="leading" secondItem="bfM-yG-tTN" secondAttribute="leading" constant="8" id="eBM-MZ-nW1"/>
+                            <constraint firstItem="XbU-oa-fux" firstAttribute="top" secondItem="bfM-yG-tTN" secondAttribute="top" constant="8" id="gjp-R4-5SA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="closeButton" destination="XbU-oa-fux" id="4W3-qL-dpT"/>
                         <outlet property="scrollView" destination="hBf-W2-F9j" id="mKT-aF-w1W"/>
                     </connections>
                 </viewController>
