@@ -6,4 +6,16 @@
 //  Copyright © 2016 yuzushioh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PhotoBrowserViewController: UIViewController {
+    
+    @IBOutlet weak var scrollView: PhotoBrowserScrollView!
+    
+    var photo: Photo!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+}

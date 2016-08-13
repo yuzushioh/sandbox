@@ -6,4 +6,27 @@
 //  Copyright © 2016 yuzushioh. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PhotoBrowserScrollView: UIScrollView {
+    
+    var photo: Photo! {
+        didSet {
+            
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize() {
+        
+    }
+}
