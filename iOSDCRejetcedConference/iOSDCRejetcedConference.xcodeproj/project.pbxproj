@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2A732E991D5EF56300B86F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732E981D5EF56300B86F8E /* AppDelegate.swift */; };
-		2A732E9B1D5EF56300B86F8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732E9A1D5EF56300B86F8E /* ViewController.swift */; };
 		2A732E9E1D5EF56300B86F8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A732E9C1D5EF56300B86F8E /* Main.storyboard */; };
 		2A732EA01D5EF56300B86F8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A732E9F1D5EF56300B86F8E /* Assets.xcassets */; };
 		2A732EA31D5EF56300B86F8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A732EA11D5EF56300B86F8E /* LaunchScreen.storyboard */; };
 		2A732EAE1D5EF56300B86F8E /* iOSDCRejetcedConferenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732EAD1D5EF56300B86F8E /* iOSDCRejetcedConferenceTests.swift */; };
 		2A732EB91D5EF56300B86F8E /* iOSDCRejetcedConferenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732EB81D5EF56300B86F8E /* iOSDCRejetcedConferenceUITests.swift */; };
+		2A732EC71D5F5B5200B86F8E /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732EC61D5F5B5200B86F8E /* PhotoListViewController.swift */; };
+		2A732EC91D5F5B9200B86F8E /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732EC81D5F5B9200B86F8E /* PhotoViewCell.swift */; };
+		2A732ECB1D5F5C5700B86F8E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ECA1D5F5C5700B86F8E /* Photo.swift */; };
+		2A732ECD1D5F637900B86F8E /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ECC1D5F637900B86F8E /* PhotoBrowserViewController.swift */; };
+		2A732ECF1D5F655900B86F8E /* PhotoBrowserScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ECE1D5F655900B86F8E /* PhotoBrowserScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		2A732E951D5EF56300B86F8E /* iOSDCRejetcedConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDCRejetcedConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A732E981D5EF56300B86F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A732E9A1D5EF56300B86F8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A732E9D1D5EF56300B86F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A732E9F1D5EF56300B86F8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A732EA21D5EF56300B86F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		2A732EB41D5EF56300B86F8E /* iOSDCRejetcedConferenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSDCRejetcedConferenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A732EB81D5EF56300B86F8E /* iOSDCRejetcedConferenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDCRejetcedConferenceUITests.swift; sourceTree = "<group>"; };
 		2A732EBA1D5EF56300B86F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A732EC61D5F5B5200B86F8E /* PhotoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		2A732EC81D5F5B9200B86F8E /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		2A732ECA1D5F5C5700B86F8E /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		2A732ECC1D5F637900B86F8E /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
+		2A732ECE1D5F655900B86F8E /* PhotoBrowserScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				2A732E981D5EF56300B86F8E /* AppDelegate.swift */,
-				2A732E9A1D5EF56300B86F8E /* ViewController.swift */,
+				2A732EC61D5F5B5200B86F8E /* PhotoListViewController.swift */,
+				2A732ECC1D5F637900B86F8E /* PhotoBrowserViewController.swift */,
+				2A732ECE1D5F655900B86F8E /* PhotoBrowserScrollView.swift */,
+				2A732EC81D5F5B9200B86F8E /* PhotoViewCell.swift */,
+				2A732ECA1D5F5C5700B86F8E /* Photo.swift */,
 				2A732E9C1D5EF56300B86F8E /* Main.storyboard */,
 				2A732E9F1D5EF56300B86F8E /* Assets.xcassets */,
 				2A732EA11D5EF56300B86F8E /* LaunchScreen.storyboard */,
@@ -256,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A732E9B1D5EF56300B86F8E /* ViewController.swift in Sources */,
+				2A732ECB1D5F5C5700B86F8E /* Photo.swift in Sources */,
 				2A732E991D5EF56300B86F8E /* AppDelegate.swift in Sources */,
+				2A732EC71D5F5B5200B86F8E /* PhotoListViewController.swift in Sources */,
+				2A732ECF1D5F655900B86F8E /* PhotoBrowserScrollView.swift in Sources */,
+				2A732EC91D5F5B9200B86F8E /* PhotoViewCell.swift in Sources */,
+				2A732ECD1D5F637900B86F8E /* PhotoBrowserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +498,7 @@
 				2A732EBF1D5EF56300B86F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A732EC01D5EF56300B86F8E /* Build configuration list for PBXNativeTarget "iOSDCRejetcedConferenceTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +507,7 @@
 				2A732EC21D5EF56300B86F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A732EC31D5EF56300B86F8E /* Build configuration list for PBXNativeTarget "iOSDCRejetcedConferenceUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +516,7 @@
 				2A732EC51D5EF56300B86F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

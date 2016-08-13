@@ -10,4 +10,11 @@ import UIKit
 
 class PhotoViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var photo: Photo! {
+        didSet {
+            imageView.image = UIImage(named: photo.photoName)
+        }
+    }
 }
