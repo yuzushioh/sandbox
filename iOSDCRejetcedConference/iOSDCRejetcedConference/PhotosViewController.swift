@@ -1,22 +1,18 @@
 //
-//  PhotoListViewController.swift
+//  PhotosViewController.swift
 //  iOSDCRejetcedConference
 //
-//  Created by 福田涼介 on 8/13/16.
+//  Created by 福田涼介 on 8/14/16.
 //  Copyright © 2016 yuzushioh. All rights reserved.
 //
 
 import UIKit
 
-class PhotoListViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class PhotosViewController: UICollectionViewController {
 
     @IBOutlet var titleToastView: UIView!
     
-    let photos = Photo.photos
-    
-    private let numberOfRows: Int = 3
-    private let minimumLineSpacing: CGFloat = 1
-    private let minimumInteritemSpacing: CGFloat = 1
+    private let photos = Photo.photos
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +20,15 @@ class PhotoListViewController: UICollectionViewController, UICollectionViewDeleg
         showTitleToastView()
         
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)))
-        dispatch_after(time, dispatch_get_main_queue()) { 
-            self.hideTitleToastView()
-        }
-    }
-
-    override var collectionView: UICollectionView! {
-        get {
-            return super.collectionView
-        }
-        
-        set {
-            super.collectionView = newValue
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.animate(
+                animation: {
+                    self.titleToastView.alpha = 0.0
+                },
+                completion: { completed in
+                    self.titleToastView.removeFromSuperview()
+                }
+            )
         }
     }
     
@@ -55,37 +48,36 @@ class PhotoListViewController: UICollectionViewController, UICollectionViewDeleg
         )
     }
     
-    private func hideTitleToastView() {
-        guard titleToastView.isDescendantOfView(collectionView) else { return }
-        titleToastView.alpha = 1.0
+    override var collectionView: UICollectionView! {
+        get {
+            return super.collectionView
+        }
         
-        animate(
-            animation: {
-                self.titleToastView.alpha = 0.0
-            },
-            completion: { completed in
-                self.titleToastView.removeFromSuperview()
-            }
-        )
+        set {
+            super.collectionView = newValue
+        }
     }
     
     private func animate(animation animation: Void -> Void, completion: ((Bool) -> Void)? = nil) {
         UIView.animateWithDuration(0.25, delay: 0.0, options: .CurveEaseInOut, animations: animation, completion: completion)
     }
-}
 
-extension PhotoListViewController {
     // MARK: UICollectionViewDataSource
-    
+
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
-    
+
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! PhotoViewCell
-        
+    
         cell.photo = photos[indexPath.row]
-        
+    
         return cell
     }
     
@@ -96,6 +88,10 @@ extension PhotoListViewController {
         vc.photo = photos[indexPath.row]
         presentViewController(vc, animated: true, completion: nil)
     }
+    
+    private let numberOfRows: Int = 3
+    private let minimumLineSpacing: CGFloat = 1
+    private let minimumInteritemSpacing: CGFloat = 1
     
     // MARK: UICollectionViewDelegateFlowLayout
     

@@ -66,7 +66,7 @@ class PhotoBrowserViewController: UIViewController {
         setupPanGestureRecognizer()
     }
     
-    private func setElementHidden(hidden: Bool, animated: Bool) {
+    private func setUIElementHidden(hidden: Bool, animated: Bool) {
         UIView.animateWithDuration(
             animated ? 0.3 : 0.0,
             animations: {
@@ -89,7 +89,7 @@ class PhotoBrowserViewController: UIViewController {
         )
     }
     
-    private func centerPhotoBrowser() {
+    private func centerPhotoBrowserScrollView() {
         animate(
             animation: {
                 self.scrollView.center = self.view.center
@@ -107,19 +107,19 @@ class PhotoBrowserViewController: UIViewController {
     func pangestureDidRecognized(gestureRecognizer: UIPanGestureRecognizer) {
         switch gestureRecognizer.state {
         case .Began, .Changed:
-            setElementHidden(true, animated: true)
+            setUIElementHidden(true, animated: true)
             
             let updatedScrollViewCenter = calculateScrollViewPositionWithGestureRecognizer(gestureRecognizer)
             scrollView.center = updatedScrollViewCenter
             currentScrollViewPoint = updatedScrollViewCenter
             
         case .Ended:
-            setElementHidden(false, animated: true)
+            setUIElementHidden(false, animated: true)
             
             if photoBrowerShouldDismiss {
                 dismissPhotoBrowser()
             } else {
-                centerPhotoBrowser()
+                centerPhotoBrowserScrollView()
             }
             
         default:
