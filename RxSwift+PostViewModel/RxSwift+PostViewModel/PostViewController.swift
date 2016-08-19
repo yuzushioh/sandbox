@@ -48,20 +48,19 @@ class PostViewController: UITableViewController {
         
         viewModel.loading
             .subscribeNext { loading in
-                print(loading)
                 // ここでこのloadingをindicatorViewなどのrx_animatingなどにbindする。
             }
             .addDisposableTo(disposeBag)
         
         viewModel.requestCompleted
             .subscribeNext { post in
-                print(post)
+                // 投稿が成功した時の処理を行う
             }
             .addDisposableTo(disposeBag)
         
         viewModel.error
             .subscribeNext { error in
-                print(error)
+                // 投稿の通信でerrorが出てしまった場合の処理を行う
             }
             .addDisposableTo(disposeBag)
     }
