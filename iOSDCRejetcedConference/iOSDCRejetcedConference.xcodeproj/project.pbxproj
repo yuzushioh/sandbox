@@ -20,7 +20,7 @@
 		2A732ECF1D5F655900B86F8E /* PhotoBrowserScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ECE1D5F655900B86F8E /* PhotoBrowserScrollView.swift */; };
 		2A732ED11D5F7DC400B86F8E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ED01D5F7DC400B86F8E /* ToastView.swift */; };
 		2A732ED51D602F7C00B86F8E /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ED41D602F7C00B86F8E /* PhotosViewController.swift */; };
-		2A732ED71D602FB200B86F8E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ED61D602FB200B86F8E /* PhotoViewController.swift */; };
+		2A732ED71D602FB200B86F8E /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732ED61D602FB200B86F8E /* BrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,7 @@
 		2A732ECE1D5F655900B86F8E /* PhotoBrowserScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserScrollView.swift; sourceTree = "<group>"; };
 		2A732ED01D5F7DC400B86F8E /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2A732ED41D602F7C00B86F8E /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		2A732ED61D602FB200B86F8E /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		2A732ED61D602FB200B86F8E /* BrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				2A732ED41D602F7C00B86F8E /* PhotosViewController.swift */,
-				2A732ED61D602FB200B86F8E /* PhotoViewController.swift */,
+				2A732ED61D602FB200B86F8E /* BrowserViewController.swift */,
 			);
 			name = "Not Good Codes";
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				2A732ED11D5F7DC400B86F8E /* ToastView.swift in Sources */,
 				2A732E991D5EF56300B86F8E /* AppDelegate.swift in Sources */,
 				2A732EC71D5F5B5200B86F8E /* PhotoListViewController.swift in Sources */,
-				2A732ED71D602FB200B86F8E /* PhotoViewController.swift in Sources */,
+				2A732ED71D602FB200B86F8E /* BrowserViewController.swift in Sources */,
 				2A732ECF1D5F655900B86F8E /* PhotoBrowserScrollView.swift in Sources */,
 				2A732EC91D5F5B9200B86F8E /* PhotoViewCell.swift in Sources */,
 				2A732ECD1D5F637900B86F8E /* PhotoBrowserViewController.swift in Sources */,
