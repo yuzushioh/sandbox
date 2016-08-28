@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A10B8EC1D72044B000F1178 /* SampleCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B8EB1D72044B000F1178 /* SampleCode.swift */; };
 		2A732E991D5EF56300B86F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A732E981D5EF56300B86F8E /* AppDelegate.swift */; };
 		2A732E9E1D5EF56300B86F8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A732E9C1D5EF56300B86F8E /* Main.storyboard */; };
 		2A732EA01D5EF56300B86F8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A732E9F1D5EF56300B86F8E /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A10B8EB1D72044B000F1178 /* SampleCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCode.swift; sourceTree = "<group>"; };
 		2A732E951D5EF56300B86F8E /* iOSDCRejetcedConference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDCRejetcedConference.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A732E981D5EF56300B86F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A732E9D1D5EF56300B86F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				2A732E981D5EF56300B86F8E /* AppDelegate.swift */,
+				2A10B8EB1D72044B000F1178 /* SampleCode.swift */,
 				2A732ED31D602F4700B86F8E /* Good Codes */,
 				2A732ED81D602FBE00B86F8E /* Not Good Codes */,
 				2A732ED21D602F3E00B86F8E /* Common */,
@@ -303,6 +306,7 @@
 			files = (
 				2A732ECB1D5F5C5700B86F8E /* Photo.swift in Sources */,
 				2A732ED51D602F7C00B86F8E /* PhotosViewController.swift in Sources */,
+				2A10B8EC1D72044B000F1178 /* SampleCode.swift in Sources */,
 				2A732ED11D5F7DC400B86F8E /* ToastView.swift in Sources */,
 				2A732E991D5EF56300B86F8E /* AppDelegate.swift in Sources */,
 				2A732EC71D5F5B5200B86F8E /* PhotoListViewController.swift in Sources */,
