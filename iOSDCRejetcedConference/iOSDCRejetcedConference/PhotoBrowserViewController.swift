@@ -71,7 +71,6 @@ class PhotoBrowserViewController: UIViewController {
             animated ? 0.3 : 0.0,
             animations: {
                 self.closeButton.alpha = hidden ? 0 : 1
-                self.fromView.alpha = hidden ? 0 : 1
             }
         )
     }
