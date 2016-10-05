@@ -18,7 +18,7 @@ class PostViewModel {
         bindPostRequest()
     }
     
-    private func setDefaultValueFromPost(post: Post?) {
+    fileprivate func setDefaultValueFromPost(_ post: Post?) {
         guard let post = post else { return }
         
         title.onNext(post.title)
@@ -27,7 +27,7 @@ class PostViewModel {
         price.onNext(post.price)
     }
     
-    let error = PublishSubject<ErrorType>()
+    let error = PublishSubject<Error>()
     
     let title = PublishSubject<String>()
     let description = PublishSubject<String>()
@@ -51,7 +51,7 @@ class PostViewModel {
             .startWith(false)
     }
     
-    private var postRequest: Observable<PostService.PostRequest> {
+    fileprivate var postRequest: Observable<PostService.PostRequest> {
         return Observable
             .combineLatest(title, description, category, price) { title, description, category, price in
                 return PostService.PostRequest(
@@ -64,13 +64,13 @@ class PostViewModel {
             }
     }
     
-    private let disposeBag = DisposeBag()
-    private let isLoading: Variable<Bool> = Variable(false)
+    fileprivate let disposeBag = DisposeBag()
+    fileprivate let isLoading: Variable<Bool> = Variable(false)
     
     let postTrigger = PublishSubject<Void>()
     let requestCompleted = PublishSubject<Post>()
     
-    private func bindPostRequest() {
+    fileprivate func bindPostRequest() {
         let mediaId = postTrigger
             .withLatestFrom(image)
             .flatMap { image in
@@ -89,11 +89,11 @@ class PostViewModel {
         
         let response = request
             .flatMap { request in
-                return Session.sharedSession.rx_responseFrom(request)
-                    .doOnError { [weak self] error in
+                return Session.shared.rx_responseFrom(request)
+                    .catchError { [weak self] error in
                         self?.error.onNext(error)
+                        return Observable.empty()
                     }
-                    .catchError { _ in Observable.empty() }
             }
             .shareReplay(1)
         

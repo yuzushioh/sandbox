@@ -22,7 +22,7 @@ extension Category {
         ]
     }
     
-    static func findCategoryWithId(id: Int) -> Category {
+    static func findCategoryWithId(_ id: Int) -> Category {
         return Category.categories
             .filter { category in
                 return category.id == id

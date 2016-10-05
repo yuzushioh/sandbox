@@ -10,20 +10,20 @@ import RxSwift
 import APIKit
 
 extension Session {
-    func rx_responseFrom<T: RequestType>(request: T) -> Observable<T.Response> {
+    func rx_responseFrom<T: Request>(_ request: T) -> Observable<T.Response> {
         return Observable.create { observer in
-            self.sendRequest(request) { result in
+            self.send(request) { result in
                 switch result {
-                case .Success(let response):
+                case .success(let response):
                     observer.onNext(response)
                     observer.onCompleted()
                     
-                case .Failure(let error):
+                case .failure(let error):
                     observer.onError(error)
                 }
             }
             
-            return AnonymousDisposable {}
+            return Disposables.create {}
         }
     }
 }

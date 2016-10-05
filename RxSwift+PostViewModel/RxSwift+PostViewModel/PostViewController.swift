@@ -20,8 +20,8 @@ class PostViewController: UITableViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var postButton: UIButton!
     
-    private let viewModel = PostViewModel()
-    private let disposeBag = DisposeBag()
+    fileprivate let viewModel = PostViewModel()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,51 +30,51 @@ class PostViewController: UITableViewController {
         bindUI()
     }
     
-    private func bindViewState() {
+    fileprivate func bindViewState() {
         viewModel.textViewPlaceholderHidden
-            .bindTo(descriptionPlaceholder.rx_hidden)
+            .bindTo(descriptionPlaceholder.rx.hidden)
             .addDisposableTo(disposeBag)
         
         viewModel.postButtonEnabled
-            .map { $0 ? UIColor(red: 0/255, green: 189/255, blue: 156/255, alpha: 1) : UIColor.lightGrayColor() }
-            .subscribeNext { [weak self] color in
+            .map { $0 ? UIColor(red: 0/255, green: 189/255, blue: 156/255, alpha: 1) : UIColor.lightGray }
+            .bindNext { [weak self] color in
                 self?.postButton.backgroundColor = color
             }
             .addDisposableTo(disposeBag)
         
         viewModel.postButtonEnabled
-            .bindTo(postButton.rx_enabled)
+            .bindTo(postButton.rx.enabled)
             .addDisposableTo(disposeBag)
         
         viewModel.loading
-            .subscribeNext { loading in
+            .bindNext { loading in
                 // ここでこのloadingをindicatorViewなどのrx_animatingなどにbindする。
             }
             .addDisposableTo(disposeBag)
         
         viewModel.requestCompleted
-            .subscribeNext { post in
+            .bindNext { post in
                 // 投稿が成功した時の処理を行う
             }
             .addDisposableTo(disposeBag)
         
         viewModel.error
-            .subscribeNext { error in
+            .bindNext { error in
                 // 投稿の通信でerrorが出てしまった場合の処理を行う
             }
             .addDisposableTo(disposeBag)
     }
     
-    private func bindUI() {
-        titleTextField.rx_text
+    fileprivate func bindUI() {
+        titleTextField.rx.text
             .bindTo(viewModel.title)
             .addDisposableTo(disposeBag)
         
-        descriptionTextView.rx_text
+        descriptionTextView.rx.text
             .bindTo(viewModel.description)
             .addDisposableTo(disposeBag)
         
-        priceTextField.rx_text
+        priceTextField.rx.text
             .map { price in
                 if let price = Int(price.extractDigitCharacter ) {
                     return price
@@ -86,66 +86,66 @@ class PostViewController: UITableViewController {
             .addDisposableTo(disposeBag)
         
         viewModel.title
-            .bindTo(titleTextField.rx_text)
+            .bindTo(titleTextField.rx.text)
             .addDisposableTo(disposeBag)
         
         viewModel.description
-            .bindTo(descriptionTextView.rx_text)
+            .bindTo(descriptionTextView.rx.text)
             .addDisposableTo(disposeBag)
         
         viewModel.price
             .map { price in
                 return price == 0 ? "" : "¥\(price)"
             }
-            .bindTo(priceTextField.rx_text)
+            .bindTo(priceTextField.rx.text)
             .addDisposableTo(disposeBag)
         
         viewModel.image
-            .subscribeNext { [weak self] image in
+            .bindNext { [weak self] image in
                 self?.selectedImageView.image = image
             }
             .addDisposableTo(disposeBag)
         
         viewModel.category
             .map { $0.name }
-            .bindTo(categoryLabel.rx_text)
+            .bindTo(categoryLabel.rx.text)
             .addDisposableTo(disposeBag)
         
-        postButton.rx_tap
+        postButton.rx.tap
             .bindTo(viewModel.postTrigger)
             .addDisposableTo(disposeBag)
         
-        selectImageButton.rx_tap
-            .subscribeNext { [weak self] _ in
+        selectImageButton.rx.tap
+            .bindNext { [weak self] _ in
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 imagePicker.allowsEditing = false
-                imagePicker.sourceType = .PhotoLibrary
-                self?.presentViewController(imagePicker, animated: true, completion: nil)
+                imagePicker.sourceType = .photoLibrary
+                self?.present(imagePicker, animated: true, completion: nil)
             }
             .addDisposableTo(disposeBag)
     }
 }
 
 extension PostViewController: CategoryListViewControllerDelegate {
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 3 && indexPath.row == 0 {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == 3 && (indexPath as NSIndexPath).row == 0 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("CategoryListViewController") as! CategoryListViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "CategoryListViewController") as! CategoryListViewController
             vc.delegate = self
             navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    func categoryListViewController(viewController: UIViewController?, selectedCategory: Category) {
+    func categoryListViewController(_ viewController: UIViewController?, selectedCategory: Category) {
         
         viewModel.category.onNext(selectedCategory)
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
 }
 
 extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard info[UIImagePickerControllerOriginalImage] != nil else {
             return
         }
@@ -153,7 +153,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
         let photo = info[UIImagePickerControllerOriginalImage] as! UIImage
         viewModel.image.onNext(photo)
         
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 

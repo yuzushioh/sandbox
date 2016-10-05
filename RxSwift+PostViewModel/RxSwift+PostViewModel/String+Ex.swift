@@ -10,8 +10,8 @@ import Foundation
 
 extension String {
     var extractDigitCharacter: String {
-        let digitArray = self.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
-        let price = digitArray.joinWithSeparator("")
+        let digitArray = self.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        let price = digitArray.joined(separator: "")
         return price
     }
 }

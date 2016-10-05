@@ -12,8 +12,6 @@
 		2A8D8AAF1D56EFF900160016 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D8AAD1D56EFF900160016 /* Main.storyboard */; };
 		2A8D8AB11D56EFF900160016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D8AB01D56EFF900160016 /* Assets.xcassets */; };
 		2A8D8AB41D56EFF900160016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D8AB21D56EFF900160016 /* LaunchScreen.storyboard */; };
-		2A8D8ABF1D56EFF900160016 /* RxSwift_PostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8ABE1D56EFF900160016 /* RxSwift_PostViewModelTests.swift */; };
-		2A8D8ACA1D56EFF900160016 /* RxSwift_PostViewModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AC91D56EFF900160016 /* RxSwift_PostViewModelUITests.swift */; };
 		2A8D8AE01D56F3C400160016 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8D8AD71D56F3B500160016 /* APIKit.framework */; };
 		2A8D8AE11D56F3C400160016 /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8D8AD71D56F3B500160016 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A8D8AE21D56F3C400160016 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8D8AD81D56F3B500160016 /* Result.framework */; };
@@ -31,23 +29,6 @@
 		2A8D8AF91D5A2AAD00160016 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AF81D5A2AAD00160016 /* CategoryListViewModel.swift */; };
 		2A8D8AFB1D5CAB4600160016 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8D8AFA1D5CAB4600160016 /* Category.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2A8D8ABB1D56EFF900160016 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A8D8A9E1D56EFF900160016 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A8D8AA51D56EFF900160016;
-			remoteInfo = "RxSwift+PostViewModel";
-		};
-		2A8D8AC61D56EFF900160016 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2A8D8A9E1D56EFF900160016 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A8D8AA51D56EFF900160016;
-			remoteInfo = "RxSwift+PostViewModel";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2A8D8AE81D56F3C500160016 /* Embed Frameworks */ = {
@@ -74,10 +55,8 @@
 		2A8D8AB01D56EFF900160016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A8D8AB31D56EFF900160016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A8D8AB51D56EFF900160016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A8D8ABA1D56EFF900160016 /* RxSwift+PostViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift+PostViewModelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8D8ABE1D56EFF900160016 /* RxSwift_PostViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_PostViewModelTests.swift; sourceTree = "<group>"; };
 		2A8D8AC01D56EFF900160016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A8D8AC51D56EFF900160016 /* RxSwift+PostViewModelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwift+PostViewModelUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8D8AC91D56EFF900160016 /* RxSwift_PostViewModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_PostViewModelUITests.swift; sourceTree = "<group>"; };
 		2A8D8ACB1D56EFF900160016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A8D8AD71D56F3B500160016 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
@@ -106,20 +85,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A8D8AB71D56EFF900160016 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A8D8AC21D56EFF900160016 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,8 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				2A8D8AA61D56EFF900160016 /* RxSwift+PostViewModel.app */,
-				2A8D8ABA1D56EFF900160016 /* RxSwift+PostViewModelTests.xctest */,
-				2A8D8AC51D56EFF900160016 /* RxSwift+PostViewModelUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,42 +202,6 @@
 			productReference = 2A8D8AA61D56EFF900160016 /* RxSwift+PostViewModel.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2A8D8AB91D56EFF900160016 /* RxSwift+PostViewModelTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8D8AD11D56EFF900160016 /* Build configuration list for PBXNativeTarget "RxSwift+PostViewModelTests" */;
-			buildPhases = (
-				2A8D8AB61D56EFF900160016 /* Sources */,
-				2A8D8AB71D56EFF900160016 /* Frameworks */,
-				2A8D8AB81D56EFF900160016 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2A8D8ABC1D56EFF900160016 /* PBXTargetDependency */,
-			);
-			name = "RxSwift+PostViewModelTests";
-			productName = "RxSwift+PostViewModelTests";
-			productReference = 2A8D8ABA1D56EFF900160016 /* RxSwift+PostViewModelTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2A8D8AC41D56EFF900160016 /* RxSwift+PostViewModelUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2A8D8AD41D56EFF900160016 /* Build configuration list for PBXNativeTarget "RxSwift+PostViewModelUITests" */;
-			buildPhases = (
-				2A8D8AC11D56EFF900160016 /* Sources */,
-				2A8D8AC21D56EFF900160016 /* Frameworks */,
-				2A8D8AC31D56EFF900160016 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2A8D8AC71D56EFF900160016 /* PBXTargetDependency */,
-			);
-			name = "RxSwift+PostViewModelUITests";
-			productName = "RxSwift+PostViewModelUITests";
-			productReference = 2A8D8AC51D56EFF900160016 /* RxSwift+PostViewModelUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -282,19 +209,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = yuzushioh;
 				TargetAttributes = {
 					2A8D8AA51D56EFF900160016 = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					2A8D8AB91D56EFF900160016 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 2A8D8AA51D56EFF900160016;
-					};
-					2A8D8AC41D56EFF900160016 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 2A8D8AA51D56EFF900160016;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -312,8 +232,6 @@
 			projectRoot = "";
 			targets = (
 				2A8D8AA51D56EFF900160016 /* RxSwift+PostViewModel */,
-				2A8D8AB91D56EFF900160016 /* RxSwift+PostViewModelTests */,
-				2A8D8AC41D56EFF900160016 /* RxSwift+PostViewModelUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -326,20 +244,6 @@
 				2A8D8AB41D56EFF900160016 /* LaunchScreen.storyboard in Resources */,
 				2A8D8AB11D56EFF900160016 /* Assets.xcassets in Resources */,
 				2A8D8AAF1D56EFF900160016 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A8D8AB81D56EFF900160016 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A8D8AC31D56EFF900160016 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,36 +267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2A8D8AB61D56EFF900160016 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A8D8ABF1D56EFF900160016 /* RxSwift_PostViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2A8D8AC11D56EFF900160016 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A8D8ACA1D56EFF900160016 /* RxSwift_PostViewModelUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2A8D8ABC1D56EFF900160016 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A8D8AA51D56EFF900160016 /* RxSwift+PostViewModel */;
-			targetProxy = 2A8D8ABB1D56EFF900160016 /* PBXContainerItemProxy */;
-		};
-		2A8D8AC71D56EFF900160016 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A8D8AA51D56EFF900160016 /* RxSwift+PostViewModel */;
-			targetProxy = 2A8D8AC61D56EFF900160016 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2A8D8AAD1D56EFF900160016 /* Main.storyboard */ = {
@@ -428,11 +303,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -473,11 +350,13 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -493,6 +372,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -501,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -509,6 +390,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yuzushioh.RxSwift-PostViewModel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -516,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -524,52 +407,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yuzushioh.RxSwift-PostViewModel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		2A8D8AD21D56EFF900160016 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "RxSwift+PostViewModelTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yuzushioh.RxSwift-PostViewModelTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxSwift+PostViewModel.app/RxSwift+PostViewModel";
-			};
-			name = Debug;
-		};
-		2A8D8AD31D56EFF900160016 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "RxSwift+PostViewModelTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yuzushioh.RxSwift-PostViewModelTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxSwift+PostViewModel.app/RxSwift+PostViewModel";
-			};
-			name = Release;
-		};
-		2A8D8AD51D56EFF900160016 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "RxSwift+PostViewModelUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yuzushioh.RxSwift-PostViewModelUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "RxSwift+PostViewModel";
-			};
-			name = Debug;
-		};
-		2A8D8AD61D56EFF900160016 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "RxSwift+PostViewModelUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "yuzushioh.RxSwift-PostViewModelUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "RxSwift+PostViewModel";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -592,22 +430,7 @@
 				2A8D8AD01D56EFF900160016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		2A8D8AD11D56EFF900160016 /* Build configuration list for PBXNativeTarget "RxSwift+PostViewModelTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2A8D8AD21D56EFF900160016 /* Debug */,
-				2A8D8AD31D56EFF900160016 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		2A8D8AD41D56EFF900160016 /* Build configuration list for PBXNativeTarget "RxSwift+PostViewModelUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2A8D8AD51D56EFF900160016 /* Debug */,
-				2A8D8AD61D56EFF900160016 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

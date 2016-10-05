@@ -10,7 +10,7 @@ import UIKit
 import APIKit
 
 class PostService {
-    struct PostRequest: RequestType {
+    struct PostRequest: Request {
         typealias Response = Post
         
         let title: String
@@ -19,8 +19,8 @@ class PostService {
         let price: Int
         var mediaId: String
         
-        var baseURL: NSURL {
-            return NSURL(string: "")!
+        var baseURL: URL {
+            return URL(string: "")!
         }
         
         var path: String {
@@ -28,12 +28,12 @@ class PostService {
         }
         
         var method: HTTPMethod {
-            return .GET
+            return .get
         }
         
-        func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> PostRequest.Response {
+        func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Post {
             guard let response = object as? PostRequest.Response else {
-                throw ResponseError.UnexpectedObject(object)
+                throw ResponseError.unexpectedObject(object)
             }
             
             return response
