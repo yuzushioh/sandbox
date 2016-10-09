@@ -25,4 +25,12 @@ class RepositoryViewCell: UITableViewCell {
             descriptionLabel.text = repository.name
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        profileImageView.image = nil
+        usernameLabel.text = nil
+        descriptionLabel.text = nil
+    }
 }
