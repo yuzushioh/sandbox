@@ -99,9 +99,9 @@
 			children = (
 				AE45B75B1DA62621003F1D7D /* AppDelegate.swift */,
 				AE45B75D1DA62621003F1D7D /* ViewController.swift */,
-				AE5317011DAA471300EEC949 /* URL+Decodable.swift */,
 				AE45B77D1DA6280D003F1D7D /* Model */,
 				AE5316FC1DAA43FF00EEC949 /* API */,
+				AE5317031DAA49A400EEC949 /* Decodable */,
 				AE45B75F1DA62621003F1D7D /* Main.storyboard */,
 				AE45B7621DA62621003F1D7D /* Assets.xcassets */,
 				AE45B7641DA62621003F1D7D /* LaunchScreen.storyboard */,
@@ -138,6 +138,14 @@
 				AE5316FA1DAA436A00EEC949 /* GithubService.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		AE5317031DAA49A400EEC949 /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				AE5317011DAA471300EEC949 /* URL+Decodable.swift */,
+			);
+			name = Decodable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -10,7 +10,6 @@ import Foundation
 import Himotoki
 
 struct Owner: JSONObject {
-    
     let id: Int64
     let name: String
     let avatarURL: URL

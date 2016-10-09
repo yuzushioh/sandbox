@@ -8,6 +8,7 @@
 
 import Foundation
 import APIKit
+import Himotoki
 
 final class GithubService {
     struct SearchRepositories: SwiftyStudentsRequest {
@@ -31,4 +32,7 @@ final class GithubService {
 
 struct SearchRepositoriesResult: JSONObject {
     
+    init(e: Extractor) throws {
+        
+    }
 }

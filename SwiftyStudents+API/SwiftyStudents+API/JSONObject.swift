@@ -14,7 +14,7 @@ protocol JSONObject: Decodable {
 }
 
 extension JSONObject {
-    static func decode(e: Extractor) throws -> Self {
+    static func decode(_ e: Extractor) throws -> Self {
         return try Self(e: e)
     }
 }
