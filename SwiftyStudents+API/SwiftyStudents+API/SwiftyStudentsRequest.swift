@@ -10,13 +10,26 @@ import Foundation
 import APIKit
 import Himotoki
 
+protocol SwiftyStudentsResponse {
+    associatedtype Element
+    var elements: [Element] { get }
+}
+
 protocol SwiftyStudentsRequest: Request {
-    
+    associatedtype Response: SwiftyStudentsResponse
 }
 
 extension SwiftyStudentsRequest {
     var baseURL: URL {
         return URL(string: "https://api.github.com")!
+    }
+    
+    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
+        guard let response = object as? Self.Response else {
+            throw ResponseError.unexpectedObject(object)
+        }
+        
+        return response
     }
 }
 

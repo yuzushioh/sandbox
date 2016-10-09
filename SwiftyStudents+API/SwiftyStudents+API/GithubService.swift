@@ -30,9 +30,16 @@ final class GithubService {
     }
 }
 
-struct SearchRepositoriesResult: JSONObject {
+struct SearchRepositoriesResult: JSONObject, SwiftyStudentsResponse {
+    
+    let repositories: [Reposirory]
     
     init(e: Extractor) throws {
-        
+        repositories = try e.array("items")
+    }
+    
+    typealias Element = Reposirory
+    var elements: [Reposirory] {
+        return repositories
     }
 }
