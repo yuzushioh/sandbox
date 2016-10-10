@@ -4,7 +4,7 @@
 //
 //  Created by yuzushioh on 10/9/16.
 //  Copyright © 2016 yuzushioh. All rights reserved.
-//
+//  
 
 import UIKit
 

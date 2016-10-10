@@ -21,7 +21,11 @@ class RepositoryListViewController: UITableViewController {
     
     fileprivate func refreshElement() {
         let request = GithubService.SearchRepositories(query: "swift")
-        manager.sendRequest(request: request) { [weak self] result in
+        manager.sendRequest(request: request) { [weak self] in
+            if let error = self?.manager.error {
+                print(error)
+            }
+            
             self?.tableView.reloadData()
         }
     }
@@ -39,6 +43,17 @@ extension RepositoryListViewController {
         cell.repository = repository
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repository = manager.elements[indexPath.row]
+        showRepository(repository: repository)
+    }
+    
+    fileprivate func showRepository(repository: Reposirory) {
+        let alertViewContoller = UIAlertController(title: repository.name, message: repository.description, preferredStyle: .alert)
+        alertViewContoller.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertViewContoller, animated: true, completion: nil)
     }
 }
 

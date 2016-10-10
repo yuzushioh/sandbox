@@ -22,7 +22,7 @@
                                     <frame key="frameInset" width="375" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-Bh-3ji" customClass="RoundedImageView" customModule="SwiftyStudents_API" customModuleProvider="target">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-Bh-3ji">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="Fst-0I-qnR"/>
                                                 <constraint firstAttribute="width" constant="46" id="GMB-61-cAb"/>
