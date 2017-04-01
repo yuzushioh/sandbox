@@ -14,6 +14,12 @@
 		AEFF4E351E8FDF8E00896345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEFF4E331E8FDF8E00896345 /* LaunchScreen.storyboard */; };
 		AEFF4E401E8FDF8E00896345 /* RxSwfit_3_3_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFF4E3F1E8FDF8E00896345 /* RxSwfit_3_3_0Tests.swift */; };
 		AEFF4E4B1E8FDF8E00896345 /* RxSwfit_3_3_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFF4E4A1E8FDF8E00896345 /* RxSwfit_3_3_0UITests.swift */; };
+		AEFF4E8D1E8FEB2C00896345 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4E841E8FEB0000896345 /* RxBlocking.framework */; };
+		AEFF4E8E1E8FEB2C00896345 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4E841E8FEB0000896345 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEFF4E8F1E8FEB2C00896345 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4E851E8FEB0000896345 /* RxCocoa.framework */; };
+		AEFF4E901E8FEB2C00896345 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4E851E8FEB0000896345 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEFF4E911E8FEB2C00896345 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4E861E8FEB0000896345 /* RxSwift.framework */; };
+		AEFF4E921E8FEB2C00896345 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4E861E8FEB0000896345 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AEFF4E931E8FEB2C00896345 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AEFF4E901E8FEB2C00896345 /* RxCocoa.framework in Embed Frameworks */,
+				AEFF4E8E1E8FEB2C00896345 /* RxBlocking.framework in Embed Frameworks */,
+				AEFF4E921E8FEB2C00896345 /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AEFF4E271E8FDF8E00896345 /* RxSwfit+3.3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxSwfit+3.3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFF4E2A1E8FDF8E00896345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +69,10 @@
 		AEFF4E461E8FDF8E00896345 /* RxSwfit+3.3.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxSwfit+3.3.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEFF4E4A1E8FDF8E00896345 /* RxSwfit_3_3_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwfit_3_3_0UITests.swift; sourceTree = "<group>"; };
 		AEFF4E4C1E8FDF8E00896345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEFF4E841E8FEB0000896345 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		AEFF4E851E8FEB0000896345 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		AEFF4E861E8FEB0000896345 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		AEFF4E871E8FEB0000896345 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFF4E8F1E8FEB2C00896345 /* RxCocoa.framework in Frameworks */,
+				AEFF4E8D1E8FEB2C00896345 /* RxBlocking.framework in Frameworks */,
+				AEFF4E911E8FEB2C00896345 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +106,7 @@
 		AEFF4E1E1E8FDF8E00896345 = {
 			isa = PBXGroup;
 			children = (
+				AEFF4E8C1E8FEB0700896345 /* Carthage */,
 				AEFF4E291E8FDF8E00896345 /* RxSwfit+3.3.0 */,
 				AEFF4E3E1E8FDF8E00896345 /* RxSwfit+3.3.0Tests */,
 				AEFF4E491E8FDF8E00896345 /* RxSwfit+3.3.0UITests */,
@@ -125,6 +155,17 @@
 			path = "RxSwfit+3.3.0UITests";
 			sourceTree = "<group>";
 		};
+		AEFF4E8C1E8FEB0700896345 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				AEFF4E841E8FEB0000896345 /* RxBlocking.framework */,
+				AEFF4E851E8FEB0000896345 /* RxCocoa.framework */,
+				AEFF4E861E8FEB0000896345 /* RxSwift.framework */,
+				AEFF4E871E8FEB0000896345 /* RxTest.framework */,
+			);
+			name = Carthage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +176,7 @@
 				AEFF4E231E8FDF8E00896345 /* Sources */,
 				AEFF4E241E8FDF8E00896345 /* Frameworks */,
 				AEFF4E251E8FDF8E00896345 /* Resources */,
+				AEFF4E931E8FEB2C00896345 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +454,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "RxSwfit+3.3.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rx.RxSwfit-3-3-0";
@@ -424,6 +470,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "RxSwfit+3.3.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rx.RxSwfit-3-3-0";
@@ -505,6 +555,7 @@
 				AEFF4E511E8FDF8E00896345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEFF4E521E8FDF8E00896345 /* Build configuration list for PBXNativeTarget "RxSwfit+3.3.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +564,7 @@
 				AEFF4E541E8FDF8E00896345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEFF4E551E8FDF8E00896345 /* Build configuration list for PBXNativeTarget "RxSwfit+3.3.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +573,7 @@
 				AEFF4E571E8FDF8E00896345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
